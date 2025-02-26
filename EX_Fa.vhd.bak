@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity Fa is
+	port
+	(
+		iA: in std_logic;
+		iB: in std_logic;
+		iC: in std_logic;
+		iD: in std_logic;
+		
+		outputFa: out std_logic;
+	
+	);
+end Fa
+
+architecture __Fa of Fa is
+begin
+	outputFa <= ((not iA and iB and iD) 
+				or (iA and not iB and not iC) 
+				or (not iB and not iD)
+				or (not iA and iC)
+				or (iA and not iD)
+				or (iB and iC));
+end __Fa
+
